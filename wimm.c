@@ -156,12 +156,32 @@ int get_pos(char **array, char *str, int num)
 			}
 		}
 
-		/* something must be wrong, please try agian carefully */
-		/* repeat again (recursion) */
+		/*
+		 * if (array[j] == NULL)
+		 * {
+		 *	printf("something must be wrong, please try agian carefully");
+		*/
+			/* repeat again (recursion) */
+		/*
+		 *	get_pos(array, str, num);
+		 * }
+		*/
 	}
 
 	return (0);
 }
+
+/**
+ * get_result - get the string obtained from cross-refrencing positions of
+ *		letters from row and column (see get_pos function)
+ *
+ * data: data structure for row and column
+ * row: array containing a list of grouped letters
+ * col: array containing a list of grouped letters
+ *
+ * Description: the obtained string is the word to determine
+ * Return: return the obtained string
+*/
 
 char *get_result(data_t data, char **row, char **col)
 {
