@@ -16,7 +16,7 @@ typedef struct data_s
 } data_t;
 
 char *pos(int num);
-int get_pos(char **array, char *str, int num);
+int get_pos(char **array, char *str, int num, int pstn);
 char *get_result(data_t data, char **row, char **col);
 
 #endif	/* __WIMM_H */

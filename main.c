@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "wimm.h"
+#include "main.h"
 
 /**
  * main - entry point
@@ -42,11 +42,11 @@ int main(void)
 		strcpy(data.row, "");
 		strcpy(data.col, "");
 
-		flag = get_pos(row, data.row, i);
+		flag = get_pos(row, data.row, i, 1);
 		if (flag == -1)
 			return (0);
 
-		flag = get_pos(col, data.col, i);
+		flag = get_pos(col, data.col, i, 1);
 		if (flag == -1)
 			return (0);
 
@@ -121,13 +121,13 @@ char *pos(int num)
  * Return: return -1 if end of file condition is encountered
 */
 
-int get_pos(char **array, char *str, int num)
+int get_pos(char **array, char *str, int num, int pstn)
 {
 	int i, j, flag;
 	char *buffer = NULL, *s = NULL;
 	size_t *n = malloc(sizeof(size_t) * 1024);
 
-	for (i = 1; i <= num; i++)
+	for (i = pstn; i <= num; i++)
 	{
 		for (j = 0; array[j] != NULL; j++)
 		{
@@ -143,7 +143,8 @@ int get_pos(char **array, char *str, int num)
 			}
 
 			buffer[strlen(buffer) - 1] = '\0';
-			if (strcmp(buffer, "yes") == 0)
+			if (strcmp(buffer, "y") == 0 || strcmp(buffer, "yes"
+				) == 0)
 			{
 				s = malloc(sizeof(char) * 2);
 
@@ -156,16 +157,16 @@ int get_pos(char **array, char *str, int num)
 			}
 		}
 
-		/*
-		 * if (array[j] == NULL)
-		 * {
-		 *	printf("something must be wrong, please try agian carefully");
-		*/
+		printf("\n");
+
+		if (array[j] == NULL)
+		{
+			printf("something must be wrong, ");
+			printf("please try agian carefully\n\n");
+
 			/* repeat again (recursion) */
-		/*
-		 *	get_pos(array, str, num);
-		 * }
-		*/
+			get_pos(array, str, i, i);
+		}
 	}
 
 	return (0);
