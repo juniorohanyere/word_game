@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "main.h"
+#include "validate.h"
 
 /**
  * main - entry point
@@ -23,16 +24,19 @@ int main(void)
 
 	while (1)
 	{
-		printf("How many letters does the word contain?: ");
+		do {
+			printf("How many letters does the word contain?: ");
 
-		flag = getline(&str, n, stdin);
-		if (flag == -1)
-		{
-			free(str);
-			exit(EXIT_SUCCESS);
-		}
+			flag = getline(&str, n, stdin);
+			if (flag == -1)
+			{
+				free(str);
+				exit(EXIT_SUCCESS);
+			}
 
-		str[strlen(str) -1] = '\0';
+			str[strlen(str) -1] = '\0';
+
+		} while (isnumber(str) == 0);
 
 		i = atoi(str);
 
