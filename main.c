@@ -54,7 +54,8 @@ int main(void)
 		if (flag == -1)
 			return (0);
 
-		printf("%s\n", get_result(data, row, col));
+		printf("Your Word is: %s\n", get_result(data, row, col));
+		printf("\n");
 	}
 
 	return (0);
@@ -158,6 +159,16 @@ int get_pos(char **array, char *str, int num, int pstn)
 				free(s);
 
 				break;
+			}
+			else if (strcmp(buffer, "n") == 0 || strcmp(buffer,
+				"no") == 0)
+			{
+				/* pass */
+			}
+			else
+			{
+				printf("Invalid input\n");
+				j -= 1;
 			}
 		}
 
