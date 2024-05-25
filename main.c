@@ -22,6 +22,11 @@ int main(void)
 	char *col[] = {"AFKPUZ", "BGLQV", "CHMRW", "DINSX", "EJOTY", NULL};
 	data_t data;
 
+	printf("----------------(Word Game)----------------\n");
+	printf("Magically Determines the Word in Your Mind\n");
+	printf("-------------------------------------------\n");
+	printf("\tCTRL+D or CTRL+C to exit\n\n");
+
 	while (1)
 	{
 		do {
