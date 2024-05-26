@@ -55,6 +55,8 @@ int main(void)
 		if (flag == -1)
 			return (0);
 
+		printf("Nice, so we go again!\n\n");
+
 		flag = get_pos(col, data.col, i, 1);
 		if (flag == -1)
 			return (0);
