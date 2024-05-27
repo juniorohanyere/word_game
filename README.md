@@ -16,3 +16,7 @@ To start enjoying the program, simply run
 ```bash
 ./word_game
 ```
+
+# Demo
+https://github.com/juniorohanyere/word_game/assets/106378800/805e9351-d3a6-4852-ba57-d1de85ebe879
+
