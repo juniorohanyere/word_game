@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "../wordg.h"
 
@@ -22,7 +23,7 @@ int isnumber(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (isdigit(str[i] == 0)
+		if (isdigit(str[i] == 0))
 			return (0);
 	}
 

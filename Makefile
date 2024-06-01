@@ -10,7 +10,7 @@ SRC = $(wildcard *.c)
 OBJ = $(patsubst %.c, %.o, $(SRC))
 
 # dependency files (header files)
-DEP = $(wildcard *.h)
+INC = $(wildcard *.h)
 
 # library for test
 LIB = -L. -lwordg
@@ -28,8 +28,14 @@ $(TARGET): $(OBJ)
 	$(CC) -shared $^ -o $@
 
 # compiling each source file into a corresponding object file
-%.o: %.c $(DEP)
+%.o: %.c $(INC)
 	$(CC) -fPIC -c $< -o $@
+
+# test dynamic library
+test: test/main
+	@$(CC) $(INC) test/main.c $(LIB) -o test/main \
+	-Wl,-rpath=$(shell pwd)
+	@test/main
 
 # clean up generated object files
 clean:
