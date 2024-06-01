@@ -12,19 +12,24 @@ OBJ = $(patsubst %.c, %.o, $(SRC))
 # dependency files (header files)
 DEP = $(wildcard *.h)
 
+# library for test
+LIB = -L. -lwordg
+
 # target
 TARGET = libwordg.so
 
+.PHONY: all clean clean-all
+
+# default target
 all: $(TARGET)
 
+# make target
 $(TARGET): $(OBJ)
 	$(CC) -shared $^ -o $@
 
 # compiling each source file into a corresponding object file
 %.o: %.c $(DEP)
 	$(CC) -fPIC -c $< -o $@
-
-.PHONY: all clean
 
 # clean up generated object files
 clean:
