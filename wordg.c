@@ -3,7 +3,6 @@
 #include <string.h>
 
 #include "wordg.h"
-#include "validate.h"
 
 /**
  * set_pos - determines the string to append to a given number

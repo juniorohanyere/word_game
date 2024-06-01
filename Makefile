@@ -18,7 +18,7 @@ LIB = -L. -lwordg
 # target
 TARGET = libwordg.so
 
-.PHONY: all clean clean-all
+.PHONY: all clean clean-all test
 
 # default target
 all: $(TARGET)
@@ -32,9 +32,8 @@ $(TARGET): $(OBJ)
 	$(CC) -fPIC -c $< -o $@
 
 # test dynamic library
-test: test/main
-	@$(CC) $(INC) test/main.c $(LIB) -o test/main \
-	-Wl,-rpath=$(shell pwd)
+test:
+	@$(CC) $(INC) test/main.c $(LIB) -o test/main -Wl,-rpath=$(shell pwd)
 	@test/main
 
 # clean up generated object files
