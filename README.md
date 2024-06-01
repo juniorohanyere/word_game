@@ -12,9 +12,9 @@ You may need to perform some clean-up first
 make clean
 ```
 
-To start enjoying the program, simply run
+To try the demo
 ```bash
-./word_game
+make test
 ```
 
 # Demo
