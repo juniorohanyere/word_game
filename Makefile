@@ -42,4 +42,4 @@ clean:
 
 # clean up all generated files
 clean-all: clean
-	-rm -f $(TARGET)
+	-rm -f $(TARGET) test/main
