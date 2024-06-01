@@ -1,5 +1,5 @@
-# Word Game
-A simple game of letters to magically determine the word in a person's mind
+# Word Game API
+A simple API for a simple game of letters to magically determine the word in a person's mind
 
 # Usage
 This project can be compiled using the `make` utility

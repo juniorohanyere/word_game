@@ -1,5 +1,5 @@
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef __WORDG_H
+#define __WORDG_H
 
 /**
  * struct data_s - data structure to store position of letters within a given
@@ -15,8 +15,8 @@ typedef struct data_s
 	char *col;
 } data_t;
 
-char *pos(int num);
+char *set_pos(int num);
 int get_pos(char **array, char *str, int num, int pstn);
 char *get_result(data_t data, char **row, char **col);
 
-#endif	/* __MAIN_H */
+#endif	/* __WORDG_H */

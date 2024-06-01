@@ -6,18 +6,30 @@ CC = gcc
 # source files
 SRC = $(wildcard *.c)
 
+# object files
+OBJ = $(patsubst %.c, %.o, $(SRC))
+
 # dependency files (header files)
 DEP = $(wildcard *.h)
 
 # target
-TARGET = word_game
+TARGET = libwordg.so
 
 all: $(TARGET)
 
-$(TARGET): $(SRC) $(DEP)
-	@$(CC) $(SRC) -o $@ -v
+$(TARGET): $(OBJ)
+	$(CC) -shared $^ -o $@
+
+# compiling each source file into a corresponding object file
+%.o: %.c $(DEP)
+	$(CC) -fPIC -c $< -o $@
 
 .PHONY: all clean
 
+# clean up generated object files
 clean:
-	-@rm -v $(TARGET)
+	-rm -f $(wildcard *.o)
+
+# clean up all generated files
+clean-all: clean
+	-rm -f $(TARGET)
