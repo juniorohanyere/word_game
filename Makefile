@@ -18,7 +18,7 @@ LIB = -L. -lwordg
 # target
 TARGET = libwordg.so
 
-.PHONY: all clean clean-all test
+.PHONY: all clean clean-all
 
 # default target
 all: $(TARGET)
