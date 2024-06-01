@@ -23,7 +23,7 @@ int isnumber(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (isdigit(str[i] == 0))
+		if (isdigit(str[i]) == 0)
 			return (0);
 	}
 
