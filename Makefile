@@ -32,7 +32,7 @@ $(TARGET): $(OBJ)
 	$(CC) -fPIC -c $< -o $@
 
 # test dynamic library
-test:
+test: $(TARGET)
 	@$(CC) $(INC) test/main.c $(LIB) -o test/main -Wl,-rpath=$(shell pwd)
 	@test/main
 
