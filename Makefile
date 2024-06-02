@@ -33,7 +33,7 @@ $(TARGET): $(OBJ)
 
 # test dynamic library
 test: $(TARGET)
-	@$(CC) $(INC) test/main.c $(LIB) -o test/main -Wl,-rpath=$(shell pwd)
+	@$(CC) test/main.c $(LIB) -o test/main -Wl,-rpath=$(shell pwd)
 	@test/main
 
 # clean up generated object files
